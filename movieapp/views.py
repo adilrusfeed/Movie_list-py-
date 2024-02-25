@@ -37,3 +37,11 @@ def update(request, id):
         form.save()
         return redirect('/')
     return render(request, 'edit.html', {'form': form, 'movie': movie})
+
+def delete(request, id):
+    if request.method=='POST':
+        movie=Movie.objects.get(id=id)
+        movie.delete()
+        return redirect('/')
+    return render(request,'delete.html')
+
