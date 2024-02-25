@@ -3,5 +3,7 @@
 <img src="{{movie.img.url}}" width="200" height="200"><br>
 <b>{{movie.name}}</b><br>
 <b><i>{{movie.desc}}</i></b><br>
-released in <b>{{movie.year}}</b>
+released in <b>{{movie.year}}</b><br><br>
+<a class="btn btn-warning" href="{% url 'movieapp:update_movie' movie.id %}">update</a><br>
+
 {% endblock %}
